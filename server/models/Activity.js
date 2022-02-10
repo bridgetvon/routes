@@ -1,5 +1,6 @@
 const { Schema, model } = require("mongoose");
 const User = require("./User");
+const gearSchema = require("./Gear");
 
 const activitySchema = new Schema({
   activity: {
