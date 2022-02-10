@@ -31,6 +31,7 @@ const typeDefs = gql`
     participants: [User]
   }
 
+  // What I will need to query entities
   type Reaction {
     _id: ID
     reactionBody: String
@@ -38,8 +39,19 @@ const typeDefs = gql`
     user: User
   }
 
+  // What I will need to mutate entities
   type Query {
     thoughts: [Thought]
+  }
+
+  type Mutation{
+    login
+    createUser
+    postThought
+    addReaction
+    addFriend
+    addActivity
+    addGear
   }
 `;
 
