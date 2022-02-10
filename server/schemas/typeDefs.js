@@ -8,6 +8,7 @@ const typeDefs = gql`
     thoughtText: String
     createdAt: String
     username: String
+    reactions: [Reaction]
   }
 
   type User {
@@ -18,6 +19,17 @@ const typeDefs = gql`
     activities: [Activity]
     reactions: [Reaction]
     gearItems: [Gear]
+  }
+
+  type Activity {
+    _id: ID
+    activity: String
+    gearRequired: [Gear] 
+    participants: [User]
+  }
+
+  type Reaction {
+    
   }
 
   type Query {
