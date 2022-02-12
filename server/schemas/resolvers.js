@@ -13,7 +13,11 @@ const resolvers = {
   },
 
   Mutation: {
-    createUser: async () => {},
+    createUser: async (parent, args) => {
+      const user = await User.create(args);
+
+      return user;
+    },
     login: async () => {},
     postThought: async () => {},
     addReaction: async () => {},
