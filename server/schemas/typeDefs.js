@@ -44,7 +44,7 @@ const typeDefs = gql`
 
   // What I will need to mutate entities
   type Query {
-    thoughts: [Thought]
+    thoughts(username: String): [Thought]
   }
 
   type Mutation{
@@ -56,25 +56,6 @@ const typeDefs = gql`
     addActivity
     addGear
   }
-=======
-    type Thought{
-        _id: ID
-        thoughtText: String
-        createdAt: String
-        username: String
-       
-    }
-    type Query {
-<<<<<<< HEAD
-        thoughts(username: String): [Thought]
-      }
-=======
-        thoughts: [Thought]
-        
-    }
->>>>>>> 8c50a949adc6172aeae947bb18292a5ca6916435
-  
->>>>>>> 2223b4b2b3daacc53721d32011d93fb235bdda47
 `;
 
 // export the typeDefs
