@@ -1,5 +1,6 @@
 .contact-header {
   justify-content: center;
+
 }
 
 input, 
@@ -28,6 +29,7 @@ button {
 	font-weight: 600;
 	margin-bottom: 30px;
 	padding: 10px 15px;	
+  justify-content: right;
 }
 
 
