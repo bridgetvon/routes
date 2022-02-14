@@ -11,8 +11,8 @@ function BikeBody() {
   // const [nodes, setNodes] = useState<Node[]>([]);
 
   const clientID = '77814';
-  const clientSecret = process.env.CLIENT_SECRET;
-  const refreshToken = process.env.REFRESH_TOKEN;
+  const clientSecret = 'ba4cf64706994d406df016b09df6d62ee55edaef';
+  const refreshToken = 'e3c3bce7513bb09b9c19bfd2450855830fb0d313';
   const grant_type = 'refresh_token';
   const activities_link = `https://www.strava.com/api/v3/athlete/activities`; 
   const auth_link = "https://www.strava.com/oauth/token";
@@ -37,6 +37,8 @@ function BikeBody() {
 
     fetchData();
   }, []);
+
+  
 
 
   return (
