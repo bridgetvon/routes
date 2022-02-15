@@ -35,12 +35,31 @@ const resolvers = {
       }
     },
     createPost: async (parent, args) => {
-      const post = await Post.create(args);
+      const post = Post.create({
+        ...args,
+        username: context.user.username,
+      });
 
+      await User.findByIdAndUpdate(
+        { _id: context.user._id },
+        { $push: { posts: post._id } },
+        { new: true }
+      );
       return post;
     },
-    // login
-    //addReaction
+    addReaction: async (parent, { postId, reactionBody }) => {
+      const reaction = await Post.findOneAndUpdate(
+        { _id: postId },
+        {
+          $push: {
+            reactions: { reactionBody, username: user.username },
+          },
+        },
+        { new: true, runValidators: true }
+      );
+      return reaction;
+    },
+
     // addFriend
     // addActivity
   },
