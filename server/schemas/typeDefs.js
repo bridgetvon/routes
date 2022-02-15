@@ -5,46 +5,51 @@ const { gql } = require("apollo-server-express");
 //type queries are methods you come up with that will be used to read you database
 //mutations are used to alter data base, similar to update delete
 const typeDefs = gql`
-  type Post {
+  type Thought {
     _id: ID
-    postText: String
+    thoughtText: String
     createdAt: String
     username: String
+    reactionCount: Int
+    reactions: [Reaction]
   }
 
   type User {
     _id: ID
     username: String
-    posts: [Post]
-    friends: [User]
+    email: String
     friendCount: Int
-    activities: [Activity]
-    reactions: [Reaction]
-  }
-
-  type Activity {
-    _id: ID
-    activity: String
-    participants: [User]
+    thoughts: [Thought]
+    friends: [User]
+    activities: String
   }
 
   type Reaction {
     _id: ID
     reactionBody: String
+    createdAt: String
+    username: String
+  }
+
+  type Auth {
+    token: ID!
+    user: User
   }
 
   type Query {
-    users(username: String): [User]
-    posts(username: String): [Post]
+    me: User
+    users: [User]
+    user(username: String!): User
+    thoughts(username: String): [Thought]
+    thought(_id: ID!): Thought
   }
 
   type Mutation {
-    createUser(username: String!, email: String!, password: String!): User
-    login(username: String!, password: String!): User
-    createPost(postText: String!, username: String!): Post
-    addReaction(reactionBody: String!, username: String!): Post
-    # addFriend
-    # addActivity
+    login(email: String!, password: String!): Auth
+    addUser(username: String!, email: String!, password: String!): Auth
+    addThought(thoughtText: String!): Thought
+    addReaction(thoughtId: ID!, reactionBody: String!): Thought
+    addFriends(friendId: ID!): User
   }
 `;
 
