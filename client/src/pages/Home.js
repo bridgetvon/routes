@@ -35,8 +35,8 @@ function Home() {
             <Route path="/social" element={<SocialFeed />} />
             <Route path="/chat" element={<Chat />} />
             <Route path="/contact" element={<Contact />} />
-            <Route path=":username" element={<Profile />} />
-            <Route path=":thoughts" element={<OnePost />} />
+            <Route path="/username" element={<Profile />} />
+            <Route path="/thoughts" element={<OnePost />} />
           </Routes>
       </main>
       <Footer /> 
