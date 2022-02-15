@@ -14,6 +14,8 @@ import Hero from '../components/Hero';
 import Contact from './Contact';
 import Profile from './Profile';
 import OnePost from '../components/OnePost';
+import StravaRedirect from '../components/Bike/stravaRedirect';
+import Yourdistance from '../components/Bike/yourDistance';
 
 
 function Home() {
@@ -37,6 +39,7 @@ function Home() {
             <Route path="/contact" element={<Contact />} />
             <Route path="/username" element={<Profile />} />
             <Route path="/thoughts" element={<OnePost />} />
+            <Route path="/redirect" component={<StravaRedirect />} />
           </Routes>
       </main>
       <Footer /> 
