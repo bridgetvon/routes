@@ -1,48 +1,63 @@
 import React, { useState, useEffect } from "react";
-// import TinderCard from 'react-tinder-card';
+import TinderCard from 'react-tinder-card';
 // // import database from '../../firebase';
 // import './cards.css';
 import ReactDOM from "react";
+import axios from '../../axios';
 
 
 
-// function TinderCards() {
-//     const [people, setPeople] = useState([]);
-//     useEffect(() => {
+function Cards() {
+   
+        const [people, setPeople] = useState([
+            // {
+            //     name: "ellen",
+            //     url: "",
+            // },
+            // {
+            //     name: 'dan',
+            //     url: "",
+            // },
+            // {
+            //     name: 'dianne',
+            //     url: ""
+            // },
+        ]);
 
-//         const unsubscribe = database
-//         .collection('people')
-//         .onSnapshot(snapshot => (
-//             setPeople(snapshot.docs.map(doc => doc.data()))
-//         ));
+        useEffect(() => {
+            async function fetchData() {
+                //will probably need to change this route
+                const req = await axios.get('/routes/cards');
 
-//         return () => {
-//             unsubscribe();
-//         }
-//     }, []);
+                setPeople(req.data);
+            }
+            fetchData();
+        }, [])
 
-//     return (
-//         <div>
-           
-//             <div className="tinderCards__cardContainer">
-//                 {people.map(person => (
-//                     <TinderCard
-//                         className="swipe"
-//                         key={person.name}
-//                         preventSwipe={['up', 'down']}
-//                     >
-//                         <div
-//                             style={{ backgroundImage: `url(${person.url})` }}
-//                             className="card">
-//                             <h3>{person.name}</h3>
-//                         </div>
-//                     </TinderCard>
-//                 ))}
-//             </div>
-//         </div>
-//     );
-// }
-// export default TinderCards;
+        console.log(people);
+
+
+    return (
+        <div>
+            <div className="tinderCards__cardContainer">
+                {people.map(person => (
+                    <Cards
+                        className="swipe"
+                        key={person.name}
+                        preventSwipe={['up', 'down']}
+                    >
+                        <div
+                            style={{ backgroundImage: `url(${person.url})` }}
+                            className="card">
+                            <h3>{person.name}</h3>
+                        </div>
+                    </Cards>
+                ))}
+            </div>
+        </div>
+    );
+}
+export default Cards;
 
 //strava stuff
 

@@ -13,6 +13,7 @@ import Chats from '../components/Chats';
 import Contact from './Contact';
 import Profile from './Profile';
 import OnePost from '../components/OnePost';
+import Cards from '../components/Cards';
 
 
 function Home() {
