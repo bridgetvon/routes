@@ -13,7 +13,7 @@ import Chats from '../components/Chats';
 import Contact from './Contact';
 import Profile from './Profile';
 import OnePost from '../components/OnePost';
-import Cards from '../components/Cards';
+import TinderCards from '../components/TinderCards';
 
 
 function Home() {
@@ -37,6 +37,7 @@ function Home() {
             <Route path="/contact" element={<Contact />} />
             <Route path=":username" element={<Profile />} />
             <Route path=":thoughts" element={<OnePost />} />
+            <Route path="/cards" element={<TinderCards />} />
           </Routes>
       </main>
       <Footer /> 
