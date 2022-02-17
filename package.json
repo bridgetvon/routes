@@ -7,7 +7,8 @@
     "start": "node server/server.js",
     "develop": "concurrently \"cd server && npm run watch\" \"cd client && npm start\"",
     "install": "cd server && npm i && cd ../client && npm i",
-    "seed": "cd server && npm run seed"
+    "seed": "cd server && npm run seed",
+    "build": "cd client && npm run build"
   },
   "repository": {
     "type": "git",
@@ -25,7 +26,12 @@
   },
   "dependencies": {
     "@apollo/client": "^3.5.8",
+    "bootstrap-icons": "^1.8.1",
     "faker": "^6.6.6",
-    "jwt-decode": "^3.1.2"
+    "jsonwebtoken": "^8.5.1",
+    "jwt-decode": "^3.1.2",
+    "react-bootstrap-icons": "^1.7.2",
+    "react-icons": "^4.3.1",
+    "react-router-dom": "^6.2.1"
   }
 }

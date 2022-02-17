@@ -16,6 +16,10 @@ function BikeBody( {name, distance, total_elevation_gain }) {
         <div>div 2 lorem ipsum dolor sit amet, consectetur lorem ipsum dolor sit amet</div>
 
     </div>
+
+
+  
+    
     
   );
 }
