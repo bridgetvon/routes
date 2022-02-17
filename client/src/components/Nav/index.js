@@ -46,10 +46,6 @@ const Navbar = ({ toggle }) => {
                             </Dropdown.Item>
                         </Dropdown.Menu>
                     </Dropdown>
-
-
-
-
                 </NavMenu>
                 {/* <NavBtn>
           <Button to='/login' primary='true'>
