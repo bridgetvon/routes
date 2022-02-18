@@ -1,35 +1,79 @@
+// // import polyline from '@mapbox/polyline';
 
 
-// var StravaApiV3 = require('strava_api_v3');
-// var defaultClient = StravaApiV3.ApiClient.instance;
+// function getActivities(res) {
+//     // commented out path to get user profile info from an array
+// // https://www.strava.com/api/v3/athlete?access_token=7bc114015e81808697585c211d65f269c319a3cc
+//     const activitiesLink = `https://www.strava.com/api/v3/athlete/activities?access_token=${res.access_token}`
 
-// // Configure OAuth2 access token for authorization: strava_oauth
-// var strava_oauth = defaultClient.authentications['strava_oauth'];
-// strava_oauth.accessToken = "799353ed9afe750d153971040ae573463c632316"
+//     fetch(activitiesLink)
+//         //   .then((res) => console.log(res.json()))
+//         .then((res) => {
+//             return res.json();
+//         })
+//         .then(data => {
+//             console.log(data);
+//             // var htmlContent = "";
+//             // for (let i = 0; i > 5; i++) {
+//             // document.getElementById('activity').innerHTML = data[0];
+//             document.getElementById('activity-name').textContent = 'Activity Name: ' + data[0].name;
 
-// var api = new StravaApiV3.ActivitiesApi()
+//             document.getElementById('activity-distance').innerHTML = 'Distance: ' + data[0].distance;
 
-// var name = 'run'; // {String} The name of the activity.
+//             document.getElementById('averageSpeed').innerHTML = 'Average Speed: ' + data[0].average_speed;
 
-// var type = 'run'; // {String} Type of activity. For example - Run, Ride etc.
+//             document.getElementById('totalTime').innerHTML = 'Total Time: ' + data[0].elapsed_time;
 
-// // var startDateLocal = 2013-10-20T19:20:30+01:00; // {Date} ISO 8601 formatted date time.
+//             document.getElementById('elevationGain').innerHTML = 'Total Elevation Gain: ' + data[0].total_elevation_gain;
+//             // const polylines = [];
+//             // for (let i = 0; i < data.length; i++) {
+//             //     const activity_polyline = data[i].map.summary_polyline;
+//             //     // const activity_name = data[i].name;
+//             //     // const activity_elevation = data[i].total_elevation_gain;
 
-// var elapsedTime = 56; // {Integer} In seconds.
+//             //     polylines.push({ activityPositions: polyline.decode(activity_polyline)});
+//             // }
 
-// var opts = { 
-//   'description': 'description of running', // {String} Description of the activity.
-//   'distance': 3.4, // {Float} In meters.
-//   'trainer': 56, // {Integer} Set to 1 to mark as a trainer activity.
-//   'commute': 56, // {Integer} Set to 1 to mark as commute.
-//   'hideFromHome': true // {Boolean} Set to true to mute activity.
-// };
+//             // document.getElementById('activity-map').innerHTML = 'Total Time: ' + polylines;
+//             // }
+//             // var htmlContent = "";
+//             // for (let i = 1; i < data.length; i++) {
+//             //     htmlContent += `
+//             //     <div className="activity" id="activity-name">${data[i].name}</div>
 
-// var callback = function(error, data, response) {
-//   if (error) {
-//     console.error(error);
-//   } else {
-//     console.log('API called successfully. Returned data: ' + data);
-//   }
-// };
-// api.createActivity(name, type, elapsedTime, opts, callback);
+//             //     `
+//             // }
+//             // document.getElementById('activity').textContent = htmlContent;
+
+
+//         })
+// }
+
+// //   getActivities();
+
+// //refresh token
+// //https://www.strava.com/oauth/token?client_id=77814&client_secret=ba4cf64706994d406df016b09df6d62ee55edaef&refresh_token=e3c3bce7513bb09b9c19bfd2450855830fb0d313&grant_type=refresh_token
+
+// const authLink = "https://www.strava.com/oauth/token";
+
+// function reAuthorize() {
+//     fetch(authLink, {
+//         method: 'post',
+//         headers: {
+//             'Accept': 'application/json, text/plain, */*',
+//             'Content-Type': 'application/json'
+
+//         },
+//         body: JSON.stringify({
+//             client_id: '77814',
+//             client_secret: 'ba4cf64706994d406df016b09df6d62ee55edaef',
+//             refresh_token: 'e3c3bce7513bb09b9c19bfd2450855830fb0d313',
+//             grant_type: 'refresh_token'
+//         })
+//         //get response json it and pass it to activities
+//     }).then((res => res.json()))
+//         .then(res => getActivities(res))
+
+// }
+
+// // reAuthorize();

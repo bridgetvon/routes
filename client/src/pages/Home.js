@@ -8,12 +8,22 @@ import Bike from '../components/Bike';
 import Run from '../components/Run';
 import Footer from '../components/footer';
 import SocialFeed from '../components/SocialFeed';
+import ChatScreen from "../components/Chat/ChatScreen";
+// import Chat from '../components/Chat/ChatBody';
+import Chat from '../components/Chat';
 import Hero from '../components/Hero';
-import Chats from '../components/Chats';
-import Contact from './Contact';
+import Cards from '../components/Cards';
+import ChatEngine from '../components/Chat';
 import Profile from './Profile';
+// import MyProfile from './myProfile';
 import OnePost from '../components/OnePost';
-import TinderCards from '../components/TinderCards';
+import Login from '../components/Login';
+import Contact from '../components/Contact';
+import NoMatch from './NoMatch';
+import ReactionList from "../components/FistBumps";
+import Strava from '../components/Strava';
+import MapBox from '../pages/Map';
+import DirectChatPage from '../components/Chat';
 
 
 function Home() {
@@ -29,15 +39,22 @@ function Home() {
           {isOpen ? < Sidebar toggle={toggle} /> : ''}
           <Routes>
             <Route path="/" element={<Hero/>} />
+            <Route path="/login" element={<Login />} />
             <Route path="/ski" element={<Ski />} />
             <Route path="/mountain-bike" element={<Bike />} />
             <Route path="/trail-run" element={<Run />} />
             <Route path="/social" element={<SocialFeed />} />
-            <Route path="/chat" element={<Chats />} />
+            <Route path="/chat" element={<DirectChatPage />} />
+            <Route path="/chatscreen" element={<ChatScreen />} />
             <Route path="/contact" element={<Contact />} />
+            <Route path="/friends" element={<Cards />} />
+            <Route path="/profile" element={<Profile />} />
+            <Route exact path="/profile/:username" element={<Profile />} />
             <Route path=":username" element={<Profile />} />
             <Route path=":thoughts" element={<OnePost />} />
-            <Route path="/cards" element={<TinderCards />} />
+            <Route path="thought/:id" element={<ReactionList />} />
+            <Route path="/strava" element={<Strava />} />
+            <Route component={NoMatch} />
           </Routes>
       </main>
       <Footer /> 
