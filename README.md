@@ -1,6 +1,6 @@
 # Routes :ski: :bike: :walking:
 
-  ### By bridgetvon, PlainDemon, brotherson67 * [Email us](bridget.schaefer31@gmail.com) * 
+  ### By bridgetvon, PlainDemon * [Email us](bridget.schaefer31@gmail.com) * 
 
   ## Table of contents 📚
   * [Description](#Description)
@@ -36,7 +36,7 @@
  ## Contributing 
  * Bridget Schaefer [Click to view Bridget's GitHub Profile!](https://github.com/bridgetvon) :skier:
  * Benjamin Chaplin [Click to view Bens GitHub Profile!](https://github.com/Plaindemon) 
- * Mitch Brotherson [Click to view Mitch's GitHub Profile!](https://github.com/brotherson67) 
+ 
     
   
 
